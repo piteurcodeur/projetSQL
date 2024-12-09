@@ -1,0 +1,32 @@
+Robot
+    id_robot INT PRIMARY KEY
+    modele VARCHAR(255)
+    nom VARCHAR(255)
+    etat ENUM('actif', 'en réparation', 'décommissionné', 'disparu')
+
+Humain
+    id_humain INT PRIMARY KEY
+    nom VARCHAR(255)
+    poste VARCHAR(255)
+    anciennete INT
+
+Membre
+    id_membre INT PRIMARY KEY
+    id_humain INT NULL, FOREIGN KEY REFERENCES Humain(id_humain)
+    id_robot INT NULL, FOREIGN KEY REFERENCES Robot(id_robot)
+
+Action
+    id_action INT PRIMARY KEY
+    description VARCHAR(255)
+    date_debut DATETIME
+    date_fin DATETIME
+    id_rapport INT, FOREIGN KEY REFERENCES Rapport(id_rapport), NULLABLE
+
+Rapport
+    id_rapport INT PRIMARY KEY
+    type_loi VARCHAR(255)
+    description TEXT
+    Participent (Table de liaison Membre ↔ Action)
+    id_membre INT, FOREIGN KEY REFERENCES Membre(id_membre)
+    id_action INT, FOREIGN KEY REFERENCES Action(id_action)
+    PRIMARY KEY (id_membre, id_action)
