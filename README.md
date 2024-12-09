@@ -1,6 +1,6 @@
 # projetSQL
 
-## Membres :
+## Membres du groupe :
 
 - Thibault LAVAL
 - Pierre LOUVET
