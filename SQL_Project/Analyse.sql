@@ -1,5 +1,7 @@
-use ProjetSQL;
+USE ProjetSQL;
 
+-- Affiche le nombre de rapports associés à chaque humain.
+-- Le résultat inclut le nom de l'humain et le nombre de rapports qu'il a générés.
 SELECT 
     h.nom AS humain, 
     COUNT(r.id_rapport) AS nombre_rapports
@@ -18,6 +20,8 @@ GROUP BY
 ORDER BY 
     nombre_rapports DESC;
     
+-- Affiche le nombre de rapports associés à chaque robot.
+-- Le résultat inclut le nom du robot et le nombre de rapports qu'il a générés.
 SELECT 
     rbt.nom AS robot, 
     COUNT(r.id_rapport) AS nombre_rapports
@@ -36,6 +40,8 @@ GROUP BY
 ORDER BY 
     nombre_rapports DESC;
     
+-- Affiche le nombre de rapports liés à chaque action.
+-- Le résultat inclut l'identifiant de l'action, sa description et le nombre de rapports associés.
 SELECT 
     a.id_action AS action_id, 
     a.description AS action_description, 
@@ -49,6 +55,8 @@ GROUP BY
 ORDER BY 
     nombre_rapports DESC;
     
+-- Liste les robots disparus avec leurs détails (nom, modèle, et état).
+-- Le résultat regroupe les informations par robot disparu.
 SELECT 
     rbt.nom AS robot, 
     rbt.modele AS modele, 
@@ -68,6 +76,8 @@ WHERE
 GROUP BY 
     rbt.id_robot, rbt.nom, rbt.modele, rbt.etat;
     
+-- Affiche le nombre de rapports associés à chaque modèle de robot.
+-- Le résultat inclut le modèle du robot et le nombre de rapports correspondants.
 SELECT 
     rbt.modele AS modele_robot, 
     COUNT(r.id_rapport) AS nombre_rapports
@@ -86,7 +96,8 @@ GROUP BY
 ORDER BY 
     nombre_rapports DESC;
     
-
+-- Calcule le temps moyen (en heures) des actions ayant une date de fin définie.
+-- Le résultat donne une seule valeur moyenne.
 SELECT 
     AVG(TIMESTAMPDIFF(HOUR, a.date_debut, a.date_fin)) AS temps_moyen_heures
 FROM 
@@ -95,8 +106,3 @@ JOIN
     Rapport r ON a.id_rapport = r.id_rapport
 WHERE 
     a.date_fin IS NOT NULL;
-
-
-
-
-
