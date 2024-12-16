@@ -1,8 +1,7 @@
 -- Utilisation de la base de données
 USE ProjetSQL;
-
 -- Insertion des données dans la table Robot avec 5x plus de données
-INSERT INTO Robot (modele, nom, etat) VALUES 
+INSERT INTO Robot (modele, nom, etat) VALUES
 ('RX-100', 'AlphaBot', 'actif'),
 ('RX-200', 'BetaBot', 'en réparation'),
 ('RX-300', 'GammaBot', 'actif'),
@@ -25,7 +24,7 @@ INSERT INTO Robot (modele, nom, etat) VALUES
 ('TX-1000', 'UpsilonBot', 'actif');
 
 -- Insertion des données dans la table Humain avec 5x plus de données
-INSERT INTO Humain (nom, poste, anciennete) VALUES 
+INSERT INTO Humain (nom, poste, anciennete) VALUES
 ('John Doe', 'Technicien', 5),
 ('Jane Smith', 'Ingénieure', 8),
 ('Alice Johnson', 'Manager', 3),
@@ -48,7 +47,7 @@ INSERT INTO Humain (nom, poste, anciennete) VALUES
 ('Tina Lime', 'Chercheuse', 13);
 
 -- Insertion des données dans la table Membre
-INSERT INTO Membre (id_humain, id_robot) VALUES 
+INSERT INTO Membre (id_humain, id_robot) VALUES
 (1, 1),
 (2, 2),
 (3, 3),
@@ -71,25 +70,50 @@ INSERT INTO Membre (id_humain, id_robot) VALUES
 (20, 20);
 
 -- Insertion des données dans la table Rapport
-INSERT INTO Rapport (type_loi, description) VALUES 
+INSERT INTO Rapport (type_loi, description) VALUES
 ('Loi 1', 'Respect de l’intégrité humaine.'),
 ('Loi 2', 'Obéissance aux ordres sauf contradiction avec la première loi.'),
 ('Loi 3', 'Protection de l’existence robotique sauf contradiction avec les lois précédentes.'),
-('Incident 1', 'Détérioration d’un composant critique.'),
-('Incident 2', 'Conflit inter-robot.'),
-('Maintenance 1', 'Mise à jour logicielle réussie.'),
-('Maintenance 2', 'Problème réseau détecté.'),
-('Rapport 1', 'Diagnostic complet terminé.'),
-('Rapport 2', 'Observation comportementale.'),
-('Rapport 3', 'Rapport d’efficacité.'),
-('Incident 3', 'Surchauffe détectée.'),
-('Incident 4', 'Interruption de service.'),
-('Maintenance 3', 'Mise à jour matérielle.'),
-('Rapport 4', 'Analyse environnementale.'),
-('Rapport 5', 'Bilan énergétique.');
+('Loi 1', 'Détérioration d’un composant critique.'),
+('Loi 2', 'Conflit inter-robot.'),
+('Loi 3', 'Mise à jour logicielle réussie.'),
+('Loi 1', 'Problème réseau détecté.'),
+('Loi 2', 'Diagnostic complet terminé.'),
+('Loi 3', 'Observation comportementale.'),
+('Loi 1', 'Rapport d’efficacité.'),
+('Loi 2', 'Surchauffe détectée.'),
+('Loi 3', 'Interruption de service.'),
+('Loi 1', 'Mise à jour matérielle.'),
+('Loi 2', 'Analyse environnementale.'),
+('Loi 3', 'Bilan énergétique.'),
+('Loi 1', 'Défaillance du capteur.'),
+('Loi 2', 'Problème de communication.'),
+('Loi 3', 'Remplacement de pièces.'),
+('Loi 1', 'Évaluation de performance.'),
+('Loi 2', 'Rapport de sécurité.'),
+('Loi 3', 'Erreur de navigation.'),
+('Loi 1', 'Problème de batterie.'),
+('Loi 2', 'Nettoyage interne.'),
+('Loi 3', 'Rapport de maintenance.'),
+('Loi 1', 'Rapport de conformité.'),
+('Loi 2', 'Défaillance du moteur.'),
+('Loi 3', 'Problème de capteur.'),
+('Loi 1', 'Réparation de la carrosserie.'),
+('Loi 2', 'Rapport de diagnostic.'),
+('Loi 3', 'Rapport de performance.'),
+('Loi 1', 'Défaillance du système.'),
+('Loi 2', 'Problème de logiciel.'),
+('Loi 3', 'Mise à jour du firmware.'),
+('Loi 1', 'Rapport de sécurité.'),
+('Loi 2', 'Rapport de maintenance.'),
+('Loi 3', 'Défaillance du capteur.'),
+('Loi 1', 'Problème de communication.'),
+('Loi 2', 'Remplacement de pièces.'),
+('Loi 3', 'Évaluation de performance.'),
+('Loi 1', 'Rapport de sécurité.');
 
 -- Insertion des données dans la table Action
-INSERT INTO Action (description, date_debut, date_fin, id_rapport) VALUES 
+INSERT INTO Action (description, date_debut, date_fin, id_rapport) VALUES
 ('Inspection visuelle', '2024-12-01 08:00:00', '2024-12-01 12:00:00', 1),
 ('Réparation module', '2024-12-02 09:00:00', '2024-12-02 14:00:00', 2),
 ('Mise à jour logicielle', '2024-12-03 10:00:00', '2024-12-03 12:00:00', 3),
@@ -104,10 +128,25 @@ INSERT INTO Action (description, date_debut, date_fin, id_rapport) VALUES
 ('Mise à jour critique', '2024-12-12 09:00:00', '2024-12-12 12:00:00', 12),
 ('Optimisation', '2024-12-13 10:00:00', '2024-12-13 14:00:00', 13),
 ('Calibration', '2024-12-14 11:00:00', '2024-12-14 13:00:00', 14),
-('Revue système', '2024-12-15 14:00:00', '2024-12-15 16:00:00', 15);
+('Revue système', '2024-12-15 14:00:00', '2024-12-15 16:00:00', 15),
+('Inspection de sécurité', '2024-12-16 08:00:00', '2024-12-16 10:00:00', 1),
+('Réparation urgente', '2024-12-17 09:00:00', '2024-12-17 12:00:00', 2),
+('Mise à jour de sécurité', '2024-12-18 10:00:00', '2024-12-18 13:00:00', 3),
+('Analyse de performance', '2024-12-19 11:00:00', '2024-12-19 14:00:00', 4),
+('Simulation de scénario', '2024-12-20 13:00:00', '2024-12-20 16:00:00', 5),
+('Test de résistance', '2024-12-21 08:00:00', '2024-12-21 11:00:00', 6),
+('Diagnostic avancé', '2024-12-22 09:30:00', '2024-12-22 12:30:00', 7),
+('Observation comportementale', '2024-12-23 10:00:00', '2024-12-23 13:00:00', 8),
+('Maintenance corrective', '2024-12-24 08:00:00', '2024-12-24 10:00:00', 9),
+('Rapport de conformité', '2024-12-25 14:00:00', '2024-12-25 16:00:00', 10),
+('Nettoyage interne', '2024-12-26 08:00:00', '2024-12-26 11:00:00', 11),
+('Mise à jour de firmware', '2024-12-27 09:00:00', '2024-12-27 12:00:00', 12),
+('Optimisation de performance', '2024-12-28 10:00:00', '2024-12-28 14:00:00', 13),
+('Calibration avancée', '2024-12-29 11:00:00', '2024-12-29 13:00:00', 14),
+('Revue de maintenance', '2024-12-30 14:00:00', '2024-12-30 16:00:00', 15);
 
 -- Insertion des données dans la table Participent
-INSERT INTO Participent (id_membre, id_action) VALUES 
+INSERT INTO Participent (id_membre, id_action) VALUES
 (1, 1),
 (2, 2),
 (3, 3),
@@ -122,4 +161,19 @@ INSERT INTO Participent (id_membre, id_action) VALUES
 (12, 12),
 (13, 13),
 (14, 14),
-(15, 15);
+(15, 15),
+(16, 16),
+(17, 17),
+(18, 18),
+(19, 19),
+(20, 20),
+(1, 21),
+(2, 22),
+(3, 23),
+(4, 24),
+(5, 25),
+(6, 26),
+(7, 27),
+(8, 28),
+(9, 29),
+(10, 30);
