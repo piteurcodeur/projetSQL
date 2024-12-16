@@ -1,18 +1,19 @@
 use ProjetSQL;
 
-CREATE USER 'administrateur'@'localhost' IDENTIFIED BY 'administrateur';
-GRANT  SELECT, INSERT, UPDATE, DELETE ON *.* to 'administrateur'@'localhost';
+CREATE ROLE 'administrateur';
+GRANT  SELECT, INSERT, UPDATE, DELETE ON *.* to 'administrateur';
 
-CREATE USER 'analyste'@'localhost' IDENTIFIED BY 'analyste';
-GRANT SELECT ON ProjetSQL.vue_robots_actifs TO 'analyste'@'localhost';
-GRANT SELECT ON ProjetSQL.vue_robots_en_réparation TO 'analyste'@'localhost';
-GRANT SELECT ON ProjetSQL.vue_robots_décommissionné TO 'analyste'@'localhost';
-GRANT SELECT ON ProjetSQL.vue_robots_disparu TO 'analyste'@'localhost';
+CREATE ROLE 'analyste';
+GRANT SELECT ON ProjetSQL.Vue_Humains_Impliques_Incidents TO 'analyste';
+GRANT SELECT ON ProjetSQL.Vue_Robots_Impliques_Incidents TO 'analyste';
+GRANT SELECT ON ProjetSQL.Vue_Actions_Associees_Incidents TO 'analyste';
+GRANT SELECT ON ProjetSQL.Vue_Robots_Incidents_Disparus TO 'analyste';
+GRANT SELECT ON ProjetSQL.Vue_Frequence_Types_Incidents TO 'analyste';
+GRANT SELECT ON ProjetSQL.Vue_Humains_Travail_Robots_Disparus TO 'analyste';
 
-CREATE USER 'technicien'@'localhost' IDENTIFIED BY 'technicien';
-GRANT UPDATE (etat) ON ProjetSQL.Robot TO 'technicien'@'localhost';
+CREATE ROLE 'technicien';
+GRANT UPDATE (etat) ON ProjetSQL.Robot TO 'technicien';
 
-CREATE USER 'superviseur_éthique'@'localhost' IDENTIFIED BY 'superviseur_éthique';
-GRANT  SELECT ON *.* to 'superviseur_éthique'@'localhost';
-
-#
+CREATE ROLE 'superviseur_éthique';
+GRANT  SELECT ON `action` to 'superviseur_éthique';
+GRANT  SELECT ON rapport to 'superviseur_éthique';
